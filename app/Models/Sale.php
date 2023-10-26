@@ -12,6 +12,10 @@ class Sale extends Model
 
     protected $fillable = ['seller_id', 'client_id', 'sold_at', 'status', 'total_amount'];
 
+    protected $casts = [
+        'status' => status::class,
+    ];
+
     public function client(): BelongsTo
     {
         return $this->belongsTo(Client::class);
