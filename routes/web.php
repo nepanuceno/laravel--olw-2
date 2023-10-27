@@ -29,6 +29,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('/clients', ClientController::class);
+
+    Route::get('/chart', function() {
+        return 'Beer & Code';
+    });
 });
 
 require __DIR__.'/auth.php';
