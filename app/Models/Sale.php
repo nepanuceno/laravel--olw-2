@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Enuns\Status;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Sale extends Model
 {
@@ -13,7 +14,7 @@ class Sale extends Model
     protected $fillable = ['seller_id', 'client_id', 'sold_at', 'status', 'total_amount'];
 
     protected $casts = [
-        'status' => status::class,
+        'status' => Status::class,
     ];
 
     public function client(): BelongsTo
