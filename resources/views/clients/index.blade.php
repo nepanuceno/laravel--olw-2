@@ -1,20 +1,19 @@
 <x-app-layout>
 
 {{-- @dd($clients) --}}
-    <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Clients') }}
-        </h2>
-    </x-slot>
+
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="px-4 sm:px-6 lg:px-8">
-                <div class="mb-4 sm:flex-auto">
-                    <p class="mt-2 text-sm text-gray-700">A list of all the clients.</p>
-                    <a class="text-sm text-blue-600 underline rounded-md dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('clients.create') }}">
-                        {{ __('Create client') }}
-                    </a>
-                  </div>
+
+                <x-heading
+                    title="Client"
+                    description="A list of all the Clients"
+                    btn-label="Add Client"
+                    :route="route('clients.create')"
+                />
+
+
                 </div>
                 <div class="max-w-2xl overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
                     <table class="divide-y divide-gray-300">
